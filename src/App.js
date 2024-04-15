@@ -12,6 +12,7 @@ import "./JSHomework13";
 import HelloWorld from "./JSHomework14";
 import { HelloWorldComponent } from "./JSHomework14";
 import Game from "./JSHomework13";
+import { List } from "./JSHomework15";
 
 import { useState } from "react";
 import { createElement } from "react";
@@ -21,20 +22,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {component === "functional" ? <HelloWorld /> : <HelloWorldComponent />}
+        {" "}
+        <Game />
+        <div>
+          <h4>Homework 14</h4>
+          {component === "functional" ? (
+            <HelloWorld />
+          ) : (
+            <HelloWorldComponent />
+          )}
+        </div>
+        <List />
       </header>
     </div>
   );
 }
 
 export default App;
-
-// function JSHomework13() {
-//   return (
-//     <div>
-//       <Game />
-//     </div>
-//   );
-// }
-
-// export default Game;

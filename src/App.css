@@ -1,9 +1,10 @@
 body {
-  background-color: aquamarine;
-}
-body {
-  margin: 20px;
+  background-color: rgb(255, 225, 127);
+  margin: 30px;
   color: rgb(92, 92, 92);
+}
+ol {
+  padding: 0;
 }
 .square {
   width: 45px;
@@ -20,4 +21,12 @@ body {
 }
 .winning {
   background-color: rgba(255, 255, 0, 0.518);
+}
+.App-header {
+  display: flex;
+  justify-content: space-around;
+}
+.list {
+  display: flex;
+  flex-direction: column;
 }

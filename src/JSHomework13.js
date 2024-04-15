@@ -3,8 +3,6 @@ import React from "react";
 
 // Tic-Tac-Toe game
 
-console.log("Hello");
-
 function Square({ value, onSquareClick, isWinningSquare }) {
   return (
     <button
@@ -109,6 +107,7 @@ export default function Game() {
   return (
     <div className="game">
       <div className="game-board">
+        <h4>Homework 13</h4>
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">

@@ -27,14 +27,14 @@ export function List() {
         onChange={handleChange}
         onKeyPress={handleKeyPress}
         placeholder="New task"
-      ></input>
+      />
       <ul>
         {task.map((task, index) => (
           <li key={index}>{task}</li>
         ))}
       </ul>
       <p>Total number of tasks: {task.length}</p>
-      <button onClick={handleAddTask}>Add a task</button>
+      <button onClick={() => handleAddTask(newTask)}>Add a task</button>
     </div>
   );
 }

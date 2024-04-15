@@ -9,10 +9,10 @@ import "./JSHomework7";
 import "./JSHomework8";
 import "./JSHomework11";
 import "./JSHomework13";
-import HelloWorld from "./JSHomework14";
-import { HelloWorldComponent } from "./JSHomework14";
+import HelloWorld from "./ReactHomework1";
+import { HelloWorldComponent } from "./ReactHomework1";
 import Game from "./JSHomework13";
-import { List } from "./JSHomework15";
+import { List } from "./ReactHomework2";
 
 import { useState } from "react";
 import { createElement } from "react";
@@ -22,10 +22,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {" "}
-        <Game />
         <div>
-          <h4>Homework 14</h4>
+          <h4>React Homework 1</h4>
           {component === "functional" ? (
             <HelloWorld />
           ) : (

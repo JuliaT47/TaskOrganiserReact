@@ -20,7 +20,7 @@ export function List() {
   };
   return (
     <div className="list">
-      <h4>Homework 15</h4>
+      <h4>React Homework 2</h4>
       <input
         type="text"
         value={newTask}

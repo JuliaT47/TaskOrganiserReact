@@ -139,3 +139,4 @@ function calculateWinner(squares) {
     return { winner: "draw", winningSquares: [] };
   }
 }
+// checked

@@ -12,7 +12,7 @@ import "./JSHomework13";
 import HelloWorld from "./ReactHomework1";
 import { HelloWorldComponent } from "./ReactHomework1";
 import Game from "./JSHomework13";
-import { List } from "./ReactHomework2";
+import { List } from "./ReactHomework2-3";
 
 import { useState } from "react";
 import { createElement } from "react";

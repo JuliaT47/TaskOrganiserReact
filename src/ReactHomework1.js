@@ -22,3 +22,5 @@ class HelloWorldComponent extends Component {
   }
 }
 export { HelloWorldComponent };
+
+// checked

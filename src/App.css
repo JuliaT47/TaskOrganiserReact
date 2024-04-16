@@ -3,6 +3,9 @@ body {
   margin: 30px;
   color: rgb(92, 92, 92);
 }
+li {
+  margin: 10px 0;
+}
 ol {
   padding: 0;
 }
@@ -47,4 +50,8 @@ button:hover {
 }
 input {
   margin: 15px 0;
+}
+.todo {
+  display: flex;
+  flex-direction: column;
 }

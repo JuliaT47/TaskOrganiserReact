@@ -16,6 +16,7 @@ import { List } from "./ReactHomework2-3";
 
 import { useState } from "react";
 import { createElement } from "react";
+import ToDoComponent from "./ReactHomework4";
 
 function App() {
   const component = "non-functional";
@@ -31,6 +32,7 @@ function App() {
           )}
         </div>
         <List />
+        <ToDoComponent />
       </header>
     </div>
   );

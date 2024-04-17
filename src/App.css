@@ -55,3 +55,22 @@ input {
   display: flex;
   flex-direction: column;
 }
+.HooksBtn {
+  margin: 10px;
+  width: 150px;
+  height: 23px;
+}
+.break {
+  text-align: center;
+}
+.Hooks {
+  display: flex;
+}
+.ReducerHook {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.RefBtn {
+  margin: 10px;
+}

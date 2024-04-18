@@ -74,3 +74,15 @@ input {
 .RefBtn {
   margin: 10px;
 }
+.useMemoDiv {
+  max-height: 100px;
+}
+.h5ReactMemo {
+  margin-top: 65px;
+  margin-left: 20px;
+}
+.customhook {
+  margin: 40px 45px;
+  display: flex;
+  flex-direction: column;
+}

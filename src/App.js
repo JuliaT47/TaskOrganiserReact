@@ -13,6 +13,7 @@ import UseEffectHook, {
   UseRefHook,
   UseStateHook,
 } from "./ReactHomework5";
+import UseMemoHook, { ReactMemo, UseWindowWidth } from "./ReactHomework6";
 
 function App() {
   const component = "non-functional";
@@ -41,6 +42,14 @@ function App() {
         </div>
         <UseReducerHook />
         <UseRefHook />
+      </div>
+      <p className="break">
+        ________________________________________________________________________________________________
+      </p>
+      <div className="Hooks">
+        <UseMemoHook />
+        <ReactMemo />
+        <UseWindowWidth />
       </div>
     </div>
   );

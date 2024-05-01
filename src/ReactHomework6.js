@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import styles from "./App.module.css";
 
 // useMemo
 function UseMemoHook() {
@@ -53,7 +54,7 @@ function ReactMemo() {
   };
   return (
     <div>
-      <h5 className="h5ReactMemo">React.memo</h5>
+      <h5 className={styles.h5ReactMemo}>React.memo</h5>
       <ul>
         {tasks.map((task) => (
           <Task key={task.id} task={task} onDelete={handleTaskDelete} />
@@ -81,7 +82,7 @@ export const UseWindowWidth = () => {
   }, []);
 
   return (
-    <div className="customhook">
+    <div className={styles.customhook}>
       <h5>Custom Hooks (UseWindowWidth)</h5>
       <p>Window Width: {windowWidth}</p>
     </div>

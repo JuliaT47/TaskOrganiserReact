@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import styles from "./App.module.css";
 
 export function List() {
   const [task, setTask] = useState([
@@ -34,7 +35,7 @@ export function List() {
   };
 
   return (
-    <div className="list">
+    <div className={styles.list}>
       <h4>React Homework 3</h4>
       <input
         type="text"
@@ -56,3 +57,4 @@ export function List() {
     </div>
   );
 }
+// checked

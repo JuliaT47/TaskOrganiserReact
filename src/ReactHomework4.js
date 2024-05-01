@@ -1,4 +1,5 @@
 import { Component } from "react";
+import styles from "./App.module.css";
 
 class ToDoComponent extends Component {
   state = {
@@ -48,7 +49,7 @@ class ToDoComponent extends Component {
   render() {
     const { todos, input } = this.state;
     return (
-      <div className="todo">
+      <div className={styles.todo}>
         <h4>React Homework 4</h4>
         <input
           value={this.state.input}
@@ -72,3 +73,4 @@ class ToDoComponent extends Component {
 }
 
 export default ToDoComponent;
+// checked

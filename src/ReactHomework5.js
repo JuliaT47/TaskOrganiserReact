@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import styles from "./App.module.css";
 
 // useEffect
 function UseEffectHook() {
@@ -25,7 +26,7 @@ function UseEffectHook() {
   return (
     <div>
       <h4>React Homework 5</h4>
-      <button className="HooksBtn" onClick={handleClick}>
+      <button className={styles.HooksBtn} onClick={handleClick}>
         Activate UseEffect
       </button>
       {value && <p>UseEffect activated</p>}
@@ -51,7 +52,7 @@ const UseLayoutEffectHook = () => {
   };
   return (
     <div id="LayoutDiv">
-      <button className="HooksBtn" onClick={handleLayoutClick}>
+      <button className={styles.HooksBtn} onClick={handleLayoutClick}>
         UseLayoutEffect
       </button>
     </div>
@@ -71,7 +72,7 @@ const UseStateHook = () => {
   };
   return (
     <div>
-      <button className="HooksBtn" onClick={handleNameClick}>
+      <button className={styles.HooksBtn} onClick={handleNameClick}>
         UseState get name
       </button>
       {name && <p>Hello {name}</p>}
@@ -116,14 +117,17 @@ const UseReducerHook = () => {
 
   return (
     <>
-      <div className="ReducerHook">
+      <div className={styles.ReducerHook}>
         <input
           type="text"
           placeholder="Name"
           value={state.name}
           onChange={(e) => handleInputChange(e, "name")}
         />
-        <button className="HooksBtn" onClick={() => handleReducerClick("name")}>
+        <button
+          className={styles.HooksBtn}
+          onClick={() => handleReducerClick("name")}
+        >
           Show Name
         </button>
         <input
@@ -133,7 +137,7 @@ const UseReducerHook = () => {
           onChange={(e) => handleInputChange(e, "secondName")}
         />
         <button
-          className="HooksBtn"
+          className={styles.HooksBtn}
           onClick={() => handleReducerClick("secondName")}
         >
           Show Second Name
@@ -145,7 +149,7 @@ const UseReducerHook = () => {
           onChange={(e) => handleInputChange(e, "birthYear")}
         />
         <button
-          className="HooksBtn"
+          className={styles.HooksBtn}
           onClick={() => handleReducerClick("birthYear")}
         >
           Show Year of Birth
@@ -172,12 +176,12 @@ function UseRefHook() {
     inputRef.current.blur();
   };
   return (
-    <div className="ReducerHook">
+    <div className={styles.ReducerHook}>
       <input ref={inputRef} placeholder="Focus me" />
-      <button className="RefBtn" onClick={handleFocus}>
+      <button className={styles.RefBtn} onClick={handleFocus}>
         Focus
       </button>
-      <button className="RefBtn" onClick={handleBlur}>
+      <button className={styles.RefBtn} onClick={handleBlur}>
         Blur
       </button>
     </div>
@@ -185,3 +189,4 @@ function UseRefHook() {
 }
 
 export { UseRefHook };
+// checked

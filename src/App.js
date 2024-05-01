@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import HelloWorld from "./ReactHomework1";
 import { HelloWorldComponent } from "./ReactHomework1";
 import Game from "./JSHomework13";
@@ -18,8 +18,8 @@ import UseMemoHook, { ReactMemo, UseWindowWidth } from "./ReactHomework6";
 function App() {
   const component = "non-functional";
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.App}>
+      <header className={styles.Appheader}>
         <div>
           <h4>React Homework 1</h4>
           {component === "functional" ? (
@@ -31,10 +31,10 @@ function App() {
         <List />
         <ToDoComponent />
       </header>
-      <p className="break">
+      <p className={styles.break}>
         ________________________________________________________________________________________________
       </p>
-      <div className="Hooks">
+      <div className={styles.Hooks}>
         <div>
           <UseEffectHook />
           <UseLayoutEffectHook />
@@ -43,10 +43,10 @@ function App() {
         <UseReducerHook />
         <UseRefHook />
       </div>
-      <p className="break">
+      <p className={styles.break}>
         ________________________________________________________________________________________________
       </p>
-      <div className="Hooks">
+      <div className={styles.Hooks}>
         <UseMemoHook />
         <ReactMemo />
         <UseWindowWidth />

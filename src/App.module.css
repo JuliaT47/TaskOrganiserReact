@@ -65,6 +65,7 @@ input {
 }
 .Hooks {
   display: flex;
+  justify-content: space-evenly;
 }
 .ReducerHook {
   display: flex;

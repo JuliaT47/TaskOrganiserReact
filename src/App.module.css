@@ -38,6 +38,8 @@ h2 {
   flex-direction: column;
   border: 1px solid;
   padding: 20px;
+  min-width: 250px;
+  min-height: 600px;
 }
 button {
   border-radius: 10px;

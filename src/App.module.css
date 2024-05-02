@@ -36,6 +36,8 @@ h2 {
 .list {
   display: flex;
   flex-direction: column;
+  border: 1px solid;
+  padding: 20px;
 }
 button {
   border-radius: 10px;
@@ -50,6 +52,8 @@ button:hover {
 }
 input {
   margin: 15px 0;
+  border-radius: 5px;
+  background-color: rgb(212, 191, 233);
 }
 .todo {
   display: flex;
@@ -86,4 +90,16 @@ input {
   margin: 40px 45px;
   display: flex;
   flex-direction: column;
+}
+.checkbox {
+  margin: 10px;
+}
+.select {
+  max-width: 150px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(212, 191, 233);
+}
+label {
+  padding: 10px;
 }

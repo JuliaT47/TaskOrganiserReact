@@ -1,8 +1,7 @@
 import styles from "./App.module.css";
-import HelloWorld from "./ReactHomework1";
 import { HelloWorldComponent } from "./ReactHomework1";
 import Game from "./JSHomework13";
-import { List } from "./ReactHomework2-3";
+import { List } from "./ReactHomework2-3-8";
 
 import { useState } from "react";
 import { createElement } from "react";
@@ -20,14 +19,6 @@ function App() {
   return (
     <div className={styles.App}>
       <header className={styles.Appheader}>
-        <div>
-          <h4>React Homework 1</h4>
-          {component === "functional" ? (
-            <HelloWorld />
-          ) : (
-            <HelloWorldComponent />
-          )}
-        </div>
         <List />
         <ToDoComponent />
       </header>

@@ -13,15 +13,33 @@ import UseEffectHook, {
   UseStateHook,
 } from "./ReactHomework5";
 import UseMemoHook, { ReactMemo, UseWindowWidth } from "./ReactHomework6";
+import { Routes, Route, Link } from "react-router-dom";
+// import Home from "./pages/home";
+// import Contact from "./pages/contact";
+// import About from "./pages/about";
+// import NotFoundPage from "./pages/not-found";
 
 function App() {
   const component = "non-functional";
   return (
     <div className={styles.App}>
       <header className={styles.Appheader}>
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
+      </header>
+      {/* <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contacts" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/404" element={<NotFoundPage />} />
+        </Routes>
+      </div> */}
+      <div className={styles.Appmain}>
         <List />
         <ToDoComponent />
-      </header>
+      </div>
       <p className={styles.break}>
         ________________________________________________________________________________________________
       </p>

@@ -9,8 +9,14 @@ a {
 li {
   margin: 10px 0;
 }
+ul {
+  list-style-type: none;
+}
 ol {
   padding: 0;
+}
+div {
+  margin: 10px 0;
 }
 h2 {
   display: flex;
@@ -48,7 +54,7 @@ button {
   border-radius: 10px;
   color: rgb(92, 92, 92);
   background-color: transparent;
-  margin: 0 10px;
+  margin: 10px;
 }
 button:hover {
   cursor: pointer;
@@ -97,7 +103,7 @@ input {
   flex-direction: column;
 }
 .checkbox {
-  margin: 10px;
+  margin: 0 10px;
 }
 .select {
   max-width: 150px;
@@ -110,4 +116,24 @@ label {
 }
 .Appheader {
   padding: 20px;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

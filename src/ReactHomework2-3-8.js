@@ -77,8 +77,8 @@ export function List() {
       select === "Active"
         ? !taskItem.isChecked
         : select === "Completed"
-        ? taskItem.isChecked
-        : true;
+          ? taskItem.isChecked
+          : true;
 
     return isSearchMatch && isSelected;
   });

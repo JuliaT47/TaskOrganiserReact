@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import { HelloWorldComponent } from "./ReactHomework1";
 import Game from "./JSHomework13";
 import { List } from "./ReactHomework2-3-8";
+import { List2 } from "./ReactHomeworkN9/ReactHomework9";
 
 import { useState } from "react";
 import { createElement } from "react";
@@ -22,45 +23,51 @@ import { Routes, Route, Link } from "react-router-dom";
 function App() {
   const component = "non-functional";
   return (
-    <div className={styles.App}>
-      <header className={styles.Appheader}>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/about">About</Link>
-      </header>
-      {/* <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contacts" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/404" element={<NotFoundPage />} />
-        </Routes>
-      </div> */}
-      <div className={styles.Appmain}>
-        <List />
-        <ToDoComponent />
-      </div>
-      <p className={styles.break}>
-        ________________________________________________________________________________________________
-      </p>
-      <div className={styles.Hooks}>
-        <div>
-          <UseEffectHook />
-          <UseLayoutEffectHook />
-          <UseStateHook />
-        </div>
-        <UseReducerHook />
-        <UseRefHook />
-      </div>
-      <p className={styles.break}>
-        ________________________________________________________________________________________________
-      </p>
-      <div className={styles.Hooks}>
-        <UseMemoHook />
-        <ReactMemo />
-        <UseWindowWidth />
-      </div>
+    // <div className={styles.App}>
+    //   <header className={styles.Appheader}>
+    //     <Link to="/">Home</Link>
+    //     <Link to="/contact">Contact</Link>
+    //     <Link to="/about">About</Link>
+    //   </header>
+    //   {/* <div>
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/contacts" element={<Contact />} />
+    //       <Route path="/about" element={<About />} />
+    //       <Route path="/404" element={<NotFoundPage />} />
+    //     </Routes>
+    //   </div> */}
+    //   <div className={styles.Appmain}>
+    //  <List />
+    //     <ToDoComponent />
+    //   </div>
+    //   <p className={styles.break}>
+    //     ________________________________________________________________________________________________
+    //   </p>
+    //   <div className={styles.Hooks}>
+    //     <div>
+    //       <UseEffectHook />
+    //       <UseLayoutEffectHook />
+    //       <UseStateHook />
+    //     </div>
+    //     <UseReducerHook />
+    //     <UseRefHook />
+    //   </div>
+    //   <p className={styles.break}>
+    //     ________________________________________________________________________________________________
+    //   </p>
+    //   <div className={styles.Hooks}>
+    //     <UseMemoHook />
+    //     <ReactMemo />
+    //     <UseWindowWidth />
+    //   </div>
+    //   <p className={styles.break}>
+    //     ________________________________________________________________________________________________
+    //   </p>
+    <div className={styles.Hooks}>
+      <List2 />
     </div>
+    // </div>
   );
 }
 

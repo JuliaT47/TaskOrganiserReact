@@ -1,35 +1,63 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "../App.module.css";
 import ReactDOM from "react-dom";
 
 axios.defaults.baseURL = "http://localhost:3000/";
 
-const TaskEditor = ({ task, onSave, onCancel }) => {
+const TaskEditor = ({ task, onSave }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [creationDate, setCreationDate] = useState("");
+  const navigate = useNavigate();
+  const { taskId } = useParams();
 
   useEffect(() => {
-    if (task) {
+    const fetchTask = async () => {
+      try {
+        const response = await axios.get(`todos/${taskId}`);
+        const taskData = response.data;
+        setName(taskData.name);
+        setDescription(taskData.description);
+        setCompleted(taskData.isChecked);
+        setCreationDate(taskData.creationDate);
+      } catch (error) {
+        console.error("Error fetching task:", error);
+      }
+    };
+
+    if (!task && taskId) {
+      fetchTask();
+    } else if (task) {
       setName(task.name);
       setDescription(task.description);
       setCompleted(task.isChecked);
     }
-  }, [task]);
+  }, [task, taskId]);
 
   const handleSave = async () => {
-    const editedTask = { ...task, name, description, isChecked: completed };
+    const editedTask = {
+      id: taskId,
+      name,
+      description,
+      isChecked: completed,
+      creationDate,
+    };
     try {
       await axios.put(`todos/${editedTask.id}`, editedTask);
-      onSave(editedTask);
+      if (onSave) {
+        onSave(editedTask);
+      }
+      navigate("/todo");
     } catch (error) {
       console.error("Error saving task:", error);
     }
   };
 
   const handleCancel = () => {
-    onCancel();
+    navigate("/todo");
   };
 
   return ReactDOM.createPortal(

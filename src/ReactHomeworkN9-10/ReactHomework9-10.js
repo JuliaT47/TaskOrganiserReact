@@ -5,6 +5,7 @@ import styles from "../App.module.css";
 import axios from "axios";
 import TaskEditor from "./TaskEditor";
 import ErrorBoundary from "./ErrorBoundary";
+import { Link } from "react-router-dom";
 
 axios.defaults.baseURL = "http://localhost:3000/";
 
@@ -139,8 +140,8 @@ export function List2() {
   });
 
   return (
-    <div className={styles.list}>
-      <h4>React Homework 9</h4>
+    <div className={`${styles.list} ${styles.todoDiv}`}>
+      <h4>React Homework 10</h4>
       {showInput && (
         <>
           <label htmlFor="newTaskName">Name</label>
@@ -213,7 +214,10 @@ export function List2() {
                     <strong>Creation Date:</strong>{" "}
                     {new Date(item.creationDate).toLocaleString()}
                   </div>
-                  <button onClick={() => handleEditTask(item)}>Edit</button>
+                  <Link to={`/edit/${item.id}`}>
+                    <button>Edit</button>
+                  </Link>
+                  {/* <button onClick={() => handleEditTask(item)}>Edit</button> */}
                   <button onClick={() => handleDeleteTask(item.id)}>
                     Delete
                   </button>

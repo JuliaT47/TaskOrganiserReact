@@ -1,0 +1,11 @@
+{
+  "todos": [
+    {
+      "id": "b92d2b63-428f-40cc-bc50-d0da83a7a02c",
+      "name": "Shopping",
+      "description": "Food...",
+      "isChecked": true,
+      "creationDate": "2024-06-05T18:35:24.500Z"
+    }
+  ]
+}

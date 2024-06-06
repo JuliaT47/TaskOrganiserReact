@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
-import { List2 } from "./ReactHomework9-10";
+import { List2 } from "./ReactHomework9-10-11";
 import ErrorPage from "./ErrorPage";
 import { QueryClient, useQuery } from "react-query";
 import Login from "./Login";

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjshomework=self.webpackChunkjshomework||[]).push([[541],{541:(e,s,r)=>{r.r(s),r.d(s,{default:()=>a});var t=r(475),o=r(579);const a=()=>(0,o.jsxs)("div",{children:[(0,o.jsx)("h2",{children:"Welcome to your Task Orginiser"}),(0,o.jsxs)("p",{children:["Here you can save your daily tasks, edit them, mark as complete and search your existing tasks!",(0,o.jsx)(t.N_,{to:"/todo",children:(0,o.jsx)("button",{children:"Get Started"})})]})]})}}]);
+//# sourceMappingURL=541.02c40f6b.chunk.js.map

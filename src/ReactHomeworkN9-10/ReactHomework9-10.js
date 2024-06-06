@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import useFetch from "./UseFetch";
+import { useQuery } from "react-query";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../App.module.css";
 import axios from "axios";
 import TaskEditor from "./TaskEditor";
 import ErrorBoundary from "./ErrorBoundary";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 axios.defaults.baseURL = "http://localhost:3000/";
 
 export function List2() {
+  const navigate = useNavigate();
   const [task, setTask] = useState([]);
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDescription, setNewTaskDescription] = useState("");
@@ -19,7 +21,20 @@ export function List2() {
   const [showInput, setShowInput] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
 
-  const { data: todos, isLoading } = useFetch("todos");
+  const {
+    data: todos,
+    isLoading,
+    error,
+  } = useQuery("todos", async () => {
+    const response = await axios.get("todos");
+    return response.data;
+  });
+
+  useEffect(() => {
+    if (error) {
+      navigate("/errorPage");
+    }
+  }, [error, navigate]);
 
   useEffect(() => {
     if (todos) {
@@ -54,6 +69,7 @@ export function List2() {
         creationDate: new Date().toISOString(),
       };
       try {
+        // throw new Error("Simulated error");
         await axios.post("todos", newTaskObject);
         setTask([...task, newTaskObject]);
         setNewTaskName("");
@@ -62,6 +78,7 @@ export function List2() {
         setShowInput(false);
       } catch (error) {
         console.error("Error adding task:", error);
+        navigate("/errorPage");
       }
     }
   };
@@ -70,12 +87,18 @@ export function List2() {
     setEditingTask(task);
   };
 
-  const handleSaveEditedTask = (editedTask) => {
-    const updatedTaskList = task.map((task) =>
-      task.id === editedTask.id ? editedTask : task
-    );
-    setTask(updatedTaskList);
-    setEditingTask(null);
+  const handleSaveEditedTask = async (editedTask) => {
+    try {
+      await axios.put(`todos/${editedTask.id}`, editedTask);
+      const updatedTaskList = task.map((task) =>
+        task.id === editedTask.id ? editedTask : task
+      );
+      setTask(updatedTaskList);
+      setEditingTask(null);
+    } catch (error) {
+      console.error("Error saving edited task:", error);
+      navigate("/errorPage");
+    }
   };
 
   const handleCancelEdit = () => {
@@ -92,6 +115,7 @@ export function List2() {
       }
     } catch (error) {
       console.error("Error deleting task:", error);
+      navigate("/errorPage");
     }
   };
 
@@ -102,15 +126,20 @@ export function List2() {
   };
 
   const handleCheckboxChange = async (taskId) => {
-    const updatedTask = task.map((taskItem) => {
-      if (taskItem.id === taskId) {
-        const updatedTask = { ...taskItem, isChecked: !taskItem.isChecked };
-        axios.put(`todos/${taskId}`, updatedTask);
-        return updatedTask;
-      }
-      return taskItem;
-    });
-    setTask(updatedTask);
+    try {
+      const updatedTask = task.map((taskItem) => {
+        if (taskItem.id === taskId) {
+          const updatedTask = { ...taskItem, isChecked: !taskItem.isChecked };
+          axios.put(`todos/${taskId}`, updatedTask);
+          return updatedTask;
+        }
+        return taskItem;
+      });
+      setTask(updatedTask);
+    } catch (error) {
+      console.error("Error updating task status:", error);
+      navigate("/errorPage");
+    }
   };
 
   const handleSelectChange = (event) => {
@@ -138,6 +167,10 @@ export function List2() {
 
     return isSearchMatch && isSelected;
   });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={`${styles.list} ${styles.todoDiv}`}>

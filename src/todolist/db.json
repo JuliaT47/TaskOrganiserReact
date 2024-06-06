@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "id": "5ba9223f-7de5-4787-be0c-9659a9667c22",
+      "name": "Study",
+      "description": "React",
+      "isChecked": true,
+      "creationDate": "2024-06-06T11:10:27.262Z"
+    },
+    {
+      "id": "7f322ffd-f6c8-43df-9b31-b0df91bd31b0",
+      "name": "Cooking",
+      "description": "soup",
+      "isChecked": false,
+      "creationDate": "2024-06-06T17:45:29.470Z"
+    },
+    {
+      "id": "f036acc7-f6de-46ba-9f5e-adaad062dbf2",
+      "name": "Driving",
+      "description": "soup",
+      "isChecked": false,
+      "creationDate": "2024-06-06T19:27:22.964Z"
+    },
+    {
+      "id": "50dddcd1-eafd-4296-902c-ec95c1c7a9d8",
+      "name": "Driving",
+      "description": "soup",
+      "isChecked": false,
+      "creationDate": "2024-06-06T19:36:23.006Z"
+    }
+  ],
+  "auth": [
+    {
+      "id": "1",
+      "username": "Julia",
+      "email": "kawaiineko@gmail.com"
+    }
+  ]
+}

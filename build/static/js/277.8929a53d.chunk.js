@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjshomework=self.webpackChunkjshomework||[]).push([[277],{277:(e,s,r)=>{r.r(s),r.d(s,{default:()=>h});var u=r(579);const h=()=>(0,u.jsxs)(u.Fragment,{children:[(0,u.jsx)("h2",{children:"About"}),(0,u.jsx)("p",{children:"Built using React by Julia Turii"})]})}}]);
-//# sourceMappingURL=277.8929a53d.chunk.js.map

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useFetch from "./UseFetch";
 import { useQuery } from "react-query";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../App.module.css";
@@ -10,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 axios.defaults.baseURL = "http://localhost:3000/";
 
-export function List2() {
+function List2() {
   const navigate = useNavigate();
   const [task, setTask] = useState([]);
   const [newTaskName, setNewTaskName] = useState("");
@@ -286,3 +285,5 @@ export function List2() {
     </div>
   );
 }
+
+export default List2;

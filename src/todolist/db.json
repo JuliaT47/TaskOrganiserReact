@@ -2,8 +2,8 @@
   "todos": [
     {
       "id": "5ba9223f-7de5-4787-be0c-9659a9667c22",
-      "name": "Study",
-      "description": "React!",
+      "name": "Study!",
+      "description": "React",
       "isChecked": true,
       "creationDate": "2024-06-06T11:10:27.262Z"
     }

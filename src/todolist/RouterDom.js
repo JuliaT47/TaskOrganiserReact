@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 
@@ -11,6 +11,8 @@ import About from "./About";
 import Home from "./Home";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
+import AuthContext from "../AuthContext";
+import PrivateRoutes from "./PrivateRoutes";
 
 // const Home = lazy(() => import("./Home"));
 // const TaskEditor = lazy(() => import("./TaskEditor"));
@@ -23,22 +25,16 @@ import NotFound from "./NotFound";
 
 const RouterDom = () => {
   const navigate = useNavigate();
-  const [loginUser, setLoginUser] = useState({ username: null, email: null });
+  const [loginUSer, setLoginUser] = useState({ username: null, email: null });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const { data, isFetching } = useQuery({
+  const { isFetching } = useQuery({
     queryFn: ["userList"],
     queryFn: () =>
       axios.get("http://localhost:3000/auth").then((res) => res.data),
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   });
-
-  console.log({ data, loginUser });
-
-  const PrivateRoute = ({ element }) => {
-    return isAuthenticated ? element : navigate("/login");
-  };
 
   useEffect(() => {
     const handleError = (error) => {
@@ -48,45 +44,37 @@ const RouterDom = () => {
 
   return (
     // <Suspense fallback={"Loading..."}>
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout isFetching={isFetching} isAuthenticated={isAuthenticated} />
-        }
-      >
-        <Route index element={<Home />} />
-        <Route
-          path="/login"
-          element={
-            <Login
-              setLoginUser={setLoginUser}
-              setIsAuthenticated={setIsAuthenticated}
-            />
-          }
-        />
-        <Route
-          path="todo"
-          element={
-            <PrivateRoute
-              element={<List2 isAuthenticated={isAuthenticated} />}
-            />
-          }
-        />
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+      <Routes>
+        <Route path="/" element={<Layout isFetching={isFetching} />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/login"
+            element={<Login setLoginUser={setLoginUser} />}
+          />
+          <Route
+            path="todo"
+            element={
+              <PrivateRoutes>
+                <List2 />
+              </PrivateRoutes>
+            }
+          />
 
-        <Route
-          path="about"
-          element={
-            <PrivateRoute
-              element={<About isAuthenticated={isAuthenticated} />}
-            />
-          }
-        />
-        <Route path="edit/:taskId" element={<TaskEditor />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="errorPage" element={<ErrorPage />} />
-      </Route>
-    </Routes>
+          <Route
+            path="about"
+            element={
+              <PrivateRoutes>
+                <About />
+              </PrivateRoutes>
+            }
+          />
+          <Route path="edit/:taskId" element={<TaskEditor />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="errorPage" element={<ErrorPage />} />
+        </Route>
+      </Routes>
+    </AuthContext.Provider>
     // </Suspense>
   );
 };

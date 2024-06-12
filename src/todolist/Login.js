@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import AuthContext from "../AuthContext";
 
-const Login = ({ setLoginUser, setIsAuthenticated }) => {
+const Login = ({ setLoginUser }) => {
+  const { setIsAuthenticated } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();

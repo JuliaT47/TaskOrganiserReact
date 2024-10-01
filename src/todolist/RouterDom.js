@@ -50,7 +50,6 @@ const RouterDom = () => {
               </PrivateRoutes>
             }
           />
-
           <Route
             path="about"
             element={

@@ -1,9 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import styles from "../App.module.css";
 
 const Layout = () => {
   const activeLink = ({ isActive }) =>
     isActive ? styles.activeLink : styles.navLink;
+
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <>
@@ -18,7 +21,7 @@ const Layout = () => {
           About
         </NavLink>
       </header>
-      <main>
+      <main className={isHome ? styles.mainHome : styles.mainDefault}>
         <Outlet />
       </main>
     </>

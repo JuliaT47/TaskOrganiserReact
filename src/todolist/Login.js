@@ -2,19 +2,21 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import AuthContext from "../AuthContext";
+import Popup from "./popup";
 
 const Login = ({ setLoginUser }) => {
   const { setIsAuthenticated } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [showPopup, setShowPopup] = useState(true);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-    };
+    // const handleSubmit = async (event) => {
+    //   event.preventDefault();
+    // };
 
     try {
       const response = await axios.get("http://localhost:3000/auth");
@@ -61,6 +63,12 @@ const Login = ({ setLoginUser }) => {
         </div>
         <button type="submit">Login</button>
       </form>
+      {showPopup && (
+        <Popup
+          message="Please use these details for logging in"
+          closePopup={() => setShowPopup(false)}
+        />
+      )}
     </>
   );
 };

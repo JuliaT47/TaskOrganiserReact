@@ -173,7 +173,7 @@ function List2() {
 
   return (
     <div className={`${styles.list} ${styles.todoDiv}`}>
-      <h4>React Homework 11</h4>
+      <h4>Your Tasks</h4>
       {showInput && (
         <>
           <label htmlFor="newTaskName">Name</label>

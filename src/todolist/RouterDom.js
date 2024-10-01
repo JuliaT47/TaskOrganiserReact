@@ -14,22 +14,13 @@ import NotFound from "./NotFound";
 import AuthContext from "../AuthContext";
 import PrivateRoutes from "./PrivateRoutes";
 
-// const Home = lazy(() => import("./Home"));
-// const TaskEditor = lazy(() => import("./TaskEditor"));
-// const About = lazy(() => import("./About"));
-// const NotFound = lazy(() => import("./NotFound"));
-// const Layout = lazy(() => import("./Layout"));
-// const List2 = lazy(() => import("./ReactHomework9-10-11"));
-// const ErrorPage = lazy(() => import("./ErrorPage"));
-// const Login = lazy(() => import("./Login"));
-
 const RouterDom = () => {
   const navigate = useNavigate();
-  const [loginUSer, setLoginUser] = useState({ username: null, email: null });
+  const [loginUser, setLoginUser] = useState({ username: null, email: null });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const { isFetching } = useQuery({
-    queryFn: ["userList"],
+    queryFn: "userList",
     queryFn: () =>
       axios.get("http://localhost:3000/auth").then((res) => res.data),
     refetchOnReconnect: false,
@@ -43,7 +34,6 @@ const RouterDom = () => {
   });
 
   return (
-    // <Suspense fallback={"Loading..."}>
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Routes>
         <Route path="/" element={<Layout isFetching={isFetching} />}>
@@ -75,7 +65,6 @@ const RouterDom = () => {
         </Route>
       </Routes>
     </AuthContext.Provider>
-    // </Suspense>
   );
 };
 export default RouterDom;

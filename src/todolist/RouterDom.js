@@ -38,10 +38,7 @@ const RouterDom = () => {
       <Routes>
         <Route path="/" element={<Layout isFetching={isFetching} />}>
           <Route index element={<Home />} />
-          <Route
-            path="/login"
-            element={<Login setLoginUser={setLoginUser} />}
-          />
+          <Route path="login" element={<Login setLoginUser={setLoginUser} />} />
           <Route
             path="todo"
             element={

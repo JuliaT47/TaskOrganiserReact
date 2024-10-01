@@ -6,7 +6,7 @@ const Layout = () => {
     isActive ? styles.activeLink : styles.navLink;
 
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/" || location.pathname === "/404";
 
   return (
     <>
@@ -21,7 +21,8 @@ const Layout = () => {
           About
         </NavLink>
       </header>
-      <main className={isHome ? styles.mainHome : styles.mainDefault}>
+      {/* <main className={isHome ? styles.mainHome : styles.mainDefault}> */}
+      <main className={styles.mainHome}>
         <Outlet />
       </main>
     </>

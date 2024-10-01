@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import AuthContext from "../AuthContext";
 import Popup from "./popup";
+import styles from "../App.module.css";
 
 const Login = ({ setLoginUser }) => {
   const { setIsAuthenticated } = useContext(AuthContext);
@@ -38,38 +39,40 @@ const Login = ({ setLoginUser }) => {
   };
 
   return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Username</label>
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="Email"
-            placeholder="Email"
-            name="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+    <div className={styles.loginContainer}>
+      <div>
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          <div>
+            <label>Username</label>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Email</label>
+            <input
+              type="Email"
+              placeholder="Email"
+              name="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
       {showPopup && (
         <Popup
           message="Please use these details for logging in"
           closePopup={() => setShowPopup(false)}
         />
       )}
-    </>
+    </div>
   );
 };
 export default Login;

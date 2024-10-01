@@ -180,6 +180,7 @@ label {
   color: white;
 }
 .popup {
+  margin-left: 45px;
   background-color: #a7a7a7;
   padding: 20px;
   border-radius: 25px;
@@ -191,15 +192,6 @@ label {
   justify-content: center;
   align-items: center;
 }
-.overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(117, 117, 117, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .popupBtn {
   width: 65px;
   height: 20px;
@@ -207,4 +199,7 @@ label {
 .popupBtn:hover {
   background-color: #a7a7a7;
   color: white;
+}
+.loginContainer {
+  display: flex;
 }

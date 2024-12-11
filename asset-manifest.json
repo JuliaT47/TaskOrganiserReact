@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TaskOrganiserReact/static/css/main.b25e8066.css",
+    "main.js": "/TaskOrganiserReact/static/js/main.a610e689.js",
+    "index.html": "/TaskOrganiserReact/index.html",
+    "main.b25e8066.css.map": "/TaskOrganiserReact/static/css/main.b25e8066.css.map",
+    "main.a610e689.js.map": "/TaskOrganiserReact/static/js/main.a610e689.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b25e8066.css",
+    "static/js/main.a610e689.js"
+  ]
+}

@@ -22,7 +22,9 @@ const RouterDom = () => {
   const { isFetching } = useQuery({
     queryFn: "userList",
     queryFn: () =>
-      axios.get("http://localhost:3000/auth").then((res) => res.data),
+      axios
+        .get("https://taskorganiserreact.onrender.com/auth")
+        .then((res) => res.data),
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   });

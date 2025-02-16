@@ -7,7 +7,7 @@ import TaskEditor from "./TaskEditor";
 import ErrorBoundary from "./ErrorBoundary";
 import { Link, useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL = "http://localhost:3000/";
+axios.defaults.baseURL = "https://taskorganiserreact.onrender.com/";
 
 function List2() {
   const navigate = useNavigate();

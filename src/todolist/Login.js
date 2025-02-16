@@ -20,7 +20,9 @@ const Login = ({ setLoginUser }) => {
     // };
 
     try {
-      const response = await axios.get("http://localhost:3000/auth");
+      const response = await axios.get(
+        "https://taskorganiserreact.onrender.com/auth"
+      );
       const users = response.data;
 
       const user = users.find((user) => user.email === email);

@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "../App.module.css";
 import ReactDOM from "react-dom";
 
-axios.defaults.baseURL = "http://localhost:3000/";
+axios.defaults.baseURL = "https://taskorganiserreact.onrender.com/";
 
 const TaskEditor = ({ task, onSave }) => {
   const [name, setName] = useState("");
